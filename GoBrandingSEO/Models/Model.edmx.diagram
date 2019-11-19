@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="624f1185d60e442d8f59af180f7da54f" Name="Diagram1">
+        <EntityTypeShape EntityType="SEOWEBModel.ADMIN" Width="1.5" PointX="7.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SEOWEBModel.comment" Width="1.5" PointX="5.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SEOWEBModel.CTDATHANG" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SEOWEBModel.DonHang" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SEOWEBModel.Giay" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SEOWEBModel.Khachhang" Width="1.5" PointX="0.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SEOWEBModel.LoaiGiay" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SEOWEBModel.Nhassanxuat" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SEOWEBModel.Rate" Width="1.5" PointX="5.25" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SEOWEBModel.Sale" Width="1.5" PointX="5.25" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SEOWEBModel.sysdiagram" Width="1.5" PointX="7.75" PointY="7.125" IsExpanded="true" />
+        <AssociationConnector Association="SEOWEBModel.FK_comment_Giay" ManuallyRouted="false" />
+        <AssociationConnector Association="SEOWEBModel.FK_comment_Khachhang" ManuallyRouted="false" />
+        <AssociationConnector Association="SEOWEBModel.FK_CTDATHANG_DonHang" ManuallyRouted="false" />
+        <AssociationConnector Association="SEOWEBModel.FK_CTDATHANG_Giay" ManuallyRouted="false" />
+        <AssociationConnector Association="SEOWEBModel.FK_DonHang_Khachhang" ManuallyRouted="false" />
+        <AssociationConnector Association="SEOWEBModel.FK_Giay_LoaiGiay" ManuallyRouted="false" />
+        <AssociationConnector Association="SEOWEBModel.FK_Giay_Nhassanxuat" ManuallyRouted="false" />
+        <AssociationConnector Association="SEOWEBModel.FK_Rate_Giay" ManuallyRouted="false" />
+        <AssociationConnector Association="SEOWEBModel.FK_Sale_Giay" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

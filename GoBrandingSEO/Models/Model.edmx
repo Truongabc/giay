@@ -1,0 +1,776 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SEOWEBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ADMIN">
+          <Key>
+            <PropertyRef Name="MaAdmin" />
+          </Key>
+          <Property Name="MaAdmin" Type="int" Nullable="false" />
+          <Property Name="HoTenAdmin" Type="nvarchar" MaxLength="50" />
+          <Property Name="DiaChiAdmin" Type="nvarchar" MaxLength="50" />
+          <Property Name="DienThoaiAdmin" Type="varchar" MaxLength="10" />
+          <Property Name="TenDNAdmin" Type="varchar" MaxLength="15" />
+          <Property Name="MatKhauAdmin" Type="varchar" MaxLength="15" />
+          <Property Name="NgaySinhAdmin" Type="smalldatetime" />
+          <Property Name="GioiTinhAdmin" Type="bit" />
+          <Property Name="EmailAdmin" Type="varchar" MaxLength="50" />
+          <Property Name="QuyenAdmin" Type="int" />
+        </EntityType>
+        <EntityType Name="comment">
+          <Key>
+            <PropertyRef Name="MaComment" />
+          </Key>
+          <Property Name="MaComment" Type="int" Nullable="false" />
+          <Property Name="MaGiay" Type="int" />
+          <Property Name="MaKH" Type="int" />
+          <Property Name="NoiDung" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="CTDATHANG">
+          <Key>
+            <PropertyRef Name="MaHD" />
+            <PropertyRef Name="MaGiay" />
+          </Key>
+          <Property Name="MaHD" Type="int" Nullable="false" />
+          <Property Name="MaGiay" Type="int" Nullable="false" />
+          <Property Name="SoLuong" Type="int" />
+          <Property Name="DonGia" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="Tien" Type="decimal" Precision="20" Scale="2" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="DonHang">
+          <Key>
+            <PropertyRef Name="MaDH" />
+          </Key>
+          <Property Name="MaDH" Type="int" Nullable="false" />
+          <Property Name="MaKH" Type="int" />
+          <Property Name="NgayDH" Type="smalldatetime" />
+          <Property Name="TongTien" Type="money" />
+          <Property Name="TrangThai" Type="bit" />
+          <Property Name="NgayGiao" Type="smalldatetime" />
+          <Property Name="TenNguoiNhan" Type="varchar" MaxLength="50" />
+          <Property Name="DiaChiNhan" Type="nvarchar" MaxLength="50" />
+          <Property Name="SoDienThoai" Type="varchar" MaxLength="15" />
+          <Property Name="MaThanhToan" Type="int" />
+        </EntityType>
+        <EntityType Name="Giay">
+          <Key>
+            <PropertyRef Name="MaGiay" />
+          </Key>
+          <Property Name="MaGiay" Type="int" Nullable="false" />
+          <Property Name="TenGiay" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="GiaBan" Type="money" />
+          <Property Name="MoTa" Type="ntext" />
+          <Property Name="Hinh" Type="varchar" MaxLength="50" />
+          <Property Name="MaLoai" Type="int" />
+          <Property Name="MaNSX" Type="int" />
+          <Property Name="NgayBan" Type="smalldatetime" />
+          <Property Name="SoLuongTonKho" Type="int" />
+          <Property Name="Size" Type="int" />
+          <Property Name="mausac" Type="nvarchar" MaxLength="50" />
+          <Property Name="phai" Type="nvarchar" MaxLength="50" />
+          <Property Name="masale" Type="int" />
+        </EntityType>
+        <EntityType Name="Khachhang">
+          <Key>
+            <PropertyRef Name="MaKH" />
+          </Key>
+          <Property Name="MaKH" Type="int" Nullable="false" />
+          <Property Name="HoTen" Type="nvarchar" MaxLength="50" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
+          <Property Name="DienThoai" Type="varchar" MaxLength="10" />
+          <Property Name="TenDN" Type="varchar" MaxLength="15" />
+          <Property Name="MatKhau" Type="varchar" MaxLength="15" />
+          <Property Name="NgaySinh" Type="smalldatetime" />
+          <Property Name="GioiTinh" Type="bit" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="sumbuy" Type="int" />
+        </EntityType>
+        <EntityType Name="LoaiGiay">
+          <Key>
+            <PropertyRef Name="MaLoai" />
+          </Key>
+          <Property Name="MaLoai" Type="int" Nullable="false" />
+          <Property Name="TenLoaiGiay" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Nhassanxuat">
+          <Key>
+            <PropertyRef Name="MaNSX" />
+          </Key>
+          <Property Name="MaNSX" Type="int" Nullable="false" />
+          <Property Name="TenNSX" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="150" />
+          <Property Name="DienThoai" Type="nvarchar" MaxLength="15" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Rate">
+          <Key>
+            <PropertyRef Name="Marate" />
+          </Key>
+          <Property Name="Marate" Type="int" Nullable="false" />
+          <Property Name="MaGiay" Type="int" />
+          <Property Name="MaKH" Type="int" />
+          <Property Name="Sao" Type="int" />
+          <Property Name="Noidung" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Sale">
+          <Key>
+            <PropertyRef Name="MaSale" />
+          </Key>
+          <Property Name="MaSale" Type="int" Nullable="false" />
+          <Property Name="MaGiay" Type="int" />
+          <Property Name="SalePhanTram" Type="float" />
+          <Property Name="SaleTien" Type="money" />
+          <Property Name="ngaybatdau" Type="smalldatetime" />
+          <Property Name="NgayHetSale" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_comment_Giay">
+          <End Role="Giay" Type="Self.Giay" Multiplicity="0..1" />
+          <End Role="comment" Type="Self.comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Giay">
+              <PropertyRef Name="MaGiay" />
+            </Principal>
+            <Dependent Role="comment">
+              <PropertyRef Name="MaGiay" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_comment_Khachhang">
+          <End Role="Khachhang" Type="Self.Khachhang" Multiplicity="0..1" />
+          <End Role="comment" Type="Self.comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Khachhang">
+              <PropertyRef Name="MaKH" />
+            </Principal>
+            <Dependent Role="comment">
+              <PropertyRef Name="MaKH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CTDATHANG_DonHang">
+          <End Role="DonHang" Type="Self.DonHang" Multiplicity="1" />
+          <End Role="CTDATHANG" Type="Self.CTDATHANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DonHang">
+              <PropertyRef Name="MaDH" />
+            </Principal>
+            <Dependent Role="CTDATHANG">
+              <PropertyRef Name="MaHD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CTDATHANG_Giay">
+          <End Role="Giay" Type="Self.Giay" Multiplicity="1" />
+          <End Role="CTDATHANG" Type="Self.CTDATHANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Giay">
+              <PropertyRef Name="MaGiay" />
+            </Principal>
+            <Dependent Role="CTDATHANG">
+              <PropertyRef Name="MaGiay" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DonHang_Khachhang">
+          <End Role="Khachhang" Type="Self.Khachhang" Multiplicity="0..1" />
+          <End Role="DonHang" Type="Self.DonHang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Khachhang">
+              <PropertyRef Name="MaKH" />
+            </Principal>
+            <Dependent Role="DonHang">
+              <PropertyRef Name="MaKH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Giay_LoaiGiay">
+          <End Role="LoaiGiay" Type="Self.LoaiGiay" Multiplicity="0..1" />
+          <End Role="Giay" Type="Self.Giay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LoaiGiay">
+              <PropertyRef Name="MaLoai" />
+            </Principal>
+            <Dependent Role="Giay">
+              <PropertyRef Name="MaLoai" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Giay_Nhassanxuat">
+          <End Role="Nhassanxuat" Type="Self.Nhassanxuat" Multiplicity="0..1" />
+          <End Role="Giay" Type="Self.Giay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nhassanxuat">
+              <PropertyRef Name="MaNSX" />
+            </Principal>
+            <Dependent Role="Giay">
+              <PropertyRef Name="MaNSX" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rate_Giay">
+          <End Role="Giay" Type="Self.Giay" Multiplicity="0..1" />
+          <End Role="Rate" Type="Self.Rate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Giay">
+              <PropertyRef Name="MaGiay" />
+            </Principal>
+            <Dependent Role="Rate">
+              <PropertyRef Name="MaGiay" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sale_Giay">
+          <End Role="Giay" Type="Self.Giay" Multiplicity="0..1" />
+          <End Role="Sale" Type="Self.Sale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Giay">
+              <PropertyRef Name="MaGiay" />
+            </Principal>
+            <Dependent Role="Sale">
+              <PropertyRef Name="MaGiay" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SEOWEBModelStoreContainer">
+          <EntitySet Name="ADMIN" EntityType="Self.ADMIN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="comment" EntityType="Self.comment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CTDATHANG" EntityType="Self.CTDATHANG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DonHang" EntityType="Self.DonHang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Giay" EntityType="Self.Giay" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Khachhang" EntityType="Self.Khachhang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LoaiGiay" EntityType="Self.LoaiGiay" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Nhassanxuat" EntityType="Self.Nhassanxuat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rate" EntityType="Self.Rate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sale" EntityType="Self.Sale" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_comment_Giay" Association="Self.FK_comment_Giay">
+            <End Role="Giay" EntitySet="Giay" />
+            <End Role="comment" EntitySet="comment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_comment_Khachhang" Association="Self.FK_comment_Khachhang">
+            <End Role="Khachhang" EntitySet="Khachhang" />
+            <End Role="comment" EntitySet="comment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CTDATHANG_DonHang" Association="Self.FK_CTDATHANG_DonHang">
+            <End Role="DonHang" EntitySet="DonHang" />
+            <End Role="CTDATHANG" EntitySet="CTDATHANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CTDATHANG_Giay" Association="Self.FK_CTDATHANG_Giay">
+            <End Role="Giay" EntitySet="Giay" />
+            <End Role="CTDATHANG" EntitySet="CTDATHANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DonHang_Khachhang" Association="Self.FK_DonHang_Khachhang">
+            <End Role="Khachhang" EntitySet="Khachhang" />
+            <End Role="DonHang" EntitySet="DonHang" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Giay_LoaiGiay" Association="Self.FK_Giay_LoaiGiay">
+            <End Role="LoaiGiay" EntitySet="LoaiGiay" />
+            <End Role="Giay" EntitySet="Giay" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Giay_Nhassanxuat" Association="Self.FK_Giay_Nhassanxuat">
+            <End Role="Nhassanxuat" EntitySet="Nhassanxuat" />
+            <End Role="Giay" EntitySet="Giay" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rate_Giay" Association="Self.FK_Rate_Giay">
+            <End Role="Giay" EntitySet="Giay" />
+            <End Role="Rate" EntitySet="Rate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sale_Giay" Association="Self.FK_Sale_Giay">
+            <End Role="Giay" EntitySet="Giay" />
+            <End Role="Sale" EntitySet="Sale" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SEOWEBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ADMIN">
+          <Key>
+            <PropertyRef Name="MaAdmin" />
+          </Key>
+          <Property Name="MaAdmin" Type="Int32" Nullable="false" />
+          <Property Name="HoTenAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DiaChiAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DienThoaiAdmin" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="TenDNAdmin" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="MatKhauAdmin" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="NgaySinhAdmin" Type="DateTime" Precision="0" />
+          <Property Name="GioiTinhAdmin" Type="Boolean" />
+          <Property Name="EmailAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="QuyenAdmin" Type="Int32" />
+        </EntityType>
+        <EntityType Name="comment">
+          <Key>
+            <PropertyRef Name="MaComment" />
+          </Key>
+          <Property Name="MaComment" Type="Int32" Nullable="false" />
+          <Property Name="MaGiay" Type="Int32" />
+          <Property Name="MaKH" Type="Int32" />
+          <Property Name="NoiDung" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Giay" Relationship="Self.FK_comment_Giay" FromRole="comment" ToRole="Giay" />
+          <NavigationProperty Name="Khachhang" Relationship="Self.FK_comment_Khachhang" FromRole="comment" ToRole="Khachhang" />
+        </EntityType>
+        <EntityType Name="CTDATHANG">
+          <Key>
+            <PropertyRef Name="MaHD" />
+            <PropertyRef Name="MaGiay" />
+          </Key>
+          <Property Name="MaHD" Type="Int32" Nullable="false" />
+          <Property Name="MaGiay" Type="Int32" Nullable="false" />
+          <Property Name="SoLuong" Type="Int32" />
+          <Property Name="DonGia" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="Tien" Type="Decimal" Precision="20" Scale="2" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="DonHang" Relationship="Self.FK_CTDATHANG_DonHang" FromRole="CTDATHANG" ToRole="DonHang" />
+          <NavigationProperty Name="Giay" Relationship="Self.FK_CTDATHANG_Giay" FromRole="CTDATHANG" ToRole="Giay" />
+        </EntityType>
+        <EntityType Name="DonHang">
+          <Key>
+            <PropertyRef Name="MaDH" />
+          </Key>
+          <Property Name="MaDH" Type="Int32" Nullable="false" />
+          <Property Name="MaKH" Type="Int32" />
+          <Property Name="NgayDH" Type="DateTime" Precision="0" />
+          <Property Name="TongTien" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="TrangThai" Type="Boolean" />
+          <Property Name="NgayGiao" Type="DateTime" Precision="0" />
+          <Property Name="TenNguoiNhan" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DiaChiNhan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SoDienThoai" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="MaThanhToan" Type="Int32" />
+          <NavigationProperty Name="CTDATHANGs" Relationship="Self.FK_CTDATHANG_DonHang" FromRole="DonHang" ToRole="CTDATHANG" />
+          <NavigationProperty Name="Khachhang" Relationship="Self.FK_DonHang_Khachhang" FromRole="DonHang" ToRole="Khachhang" />
+        </EntityType>
+        <EntityType Name="Giay">
+          <Key>
+            <PropertyRef Name="MaGiay" />
+          </Key>
+          <Property Name="MaGiay" Type="Int32" Nullable="false" />
+          <Property Name="TenGiay" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="GiaBan" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Hinh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MaLoai" Type="Int32" />
+          <Property Name="MaNSX" Type="Int32" />
+          <Property Name="NgayBan" Type="DateTime" Precision="0" />
+          <Property Name="SoLuongTonKho" Type="Int32" />
+          <Property Name="Size" Type="Int32" />
+          <Property Name="mausac" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="phai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="masale" Type="Int32" />
+          <NavigationProperty Name="comments" Relationship="Self.FK_comment_Giay" FromRole="Giay" ToRole="comment" />
+          <NavigationProperty Name="CTDATHANGs" Relationship="Self.FK_CTDATHANG_Giay" FromRole="Giay" ToRole="CTDATHANG" />
+          <NavigationProperty Name="LoaiGiay" Relationship="Self.FK_Giay_LoaiGiay" FromRole="Giay" ToRole="LoaiGiay" />
+          <NavigationProperty Name="Nhassanxuat" Relationship="Self.FK_Giay_Nhassanxuat" FromRole="Giay" ToRole="Nhassanxuat" />
+          <NavigationProperty Name="Rates" Relationship="Self.FK_Rate_Giay" FromRole="Giay" ToRole="Rate" />
+          <NavigationProperty Name="Sales" Relationship="Self.FK_Sale_Giay" FromRole="Giay" ToRole="Sale" />
+        </EntityType>
+        <EntityType Name="Khachhang">
+          <Key>
+            <PropertyRef Name="MaKH" />
+          </Key>
+          <Property Name="MaKH" Type="Int32" Nullable="false" />
+          <Property Name="HoTen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DienThoai" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="TenDN" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="MatKhau" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+          <Property Name="GioiTinh" Type="Boolean" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sumbuy" Type="Int32" />
+          <NavigationProperty Name="comments" Relationship="Self.FK_comment_Khachhang" FromRole="Khachhang" ToRole="comment" />
+          <NavigationProperty Name="DonHangs" Relationship="Self.FK_DonHang_Khachhang" FromRole="Khachhang" ToRole="DonHang" />
+        </EntityType>
+        <EntityType Name="LoaiGiay">
+          <Key>
+            <PropertyRef Name="MaLoai" />
+          </Key>
+          <Property Name="MaLoai" Type="Int32" Nullable="false" />
+          <Property Name="TenLoaiGiay" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Giays" Relationship="Self.FK_Giay_LoaiGiay" FromRole="LoaiGiay" ToRole="Giay" />
+        </EntityType>
+        <EntityType Name="Nhassanxuat">
+          <Key>
+            <PropertyRef Name="MaNSX" />
+          </Key>
+          <Property Name="MaNSX" Type="Int32" Nullable="false" />
+          <Property Name="TenNSX" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DiaChi" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="DienThoai" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Giays" Relationship="Self.FK_Giay_Nhassanxuat" FromRole="Nhassanxuat" ToRole="Giay" />
+        </EntityType>
+        <EntityType Name="Rate">
+          <Key>
+            <PropertyRef Name="Marate" />
+          </Key>
+          <Property Name="Marate" Type="Int32" Nullable="false" />
+          <Property Name="MaGiay" Type="Int32" />
+          <Property Name="MaKH" Type="Int32" />
+          <Property Name="Sao" Type="Int32" />
+          <Property Name="Noidung" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Giay" Relationship="Self.FK_Rate_Giay" FromRole="Rate" ToRole="Giay" />
+        </EntityType>
+        <EntityType Name="Sale">
+          <Key>
+            <PropertyRef Name="MaSale" />
+          </Key>
+          <Property Name="MaSale" Type="Int32" Nullable="false" />
+          <Property Name="MaGiay" Type="Int32" />
+          <Property Name="SalePhanTram" Type="Double" />
+          <Property Name="SaleTien" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ngaybatdau" Type="DateTime" Precision="0" />
+          <Property Name="NgayHetSale" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Giay" Relationship="Self.FK_Sale_Giay" FromRole="Sale" ToRole="Giay" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_comment_Giay">
+          <End Role="Giay" Type="Self.Giay" Multiplicity="0..1" />
+          <End Role="comment" Type="Self.comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Giay">
+              <PropertyRef Name="MaGiay" />
+            </Principal>
+            <Dependent Role="comment">
+              <PropertyRef Name="MaGiay" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_comment_Khachhang">
+          <End Role="Khachhang" Type="Self.Khachhang" Multiplicity="0..1" />
+          <End Role="comment" Type="Self.comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Khachhang">
+              <PropertyRef Name="MaKH" />
+            </Principal>
+            <Dependent Role="comment">
+              <PropertyRef Name="MaKH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CTDATHANG_DonHang">
+          <End Role="DonHang" Type="Self.DonHang" Multiplicity="1" />
+          <End Role="CTDATHANG" Type="Self.CTDATHANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DonHang">
+              <PropertyRef Name="MaDH" />
+            </Principal>
+            <Dependent Role="CTDATHANG">
+              <PropertyRef Name="MaHD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CTDATHANG_Giay">
+          <End Role="Giay" Type="Self.Giay" Multiplicity="1" />
+          <End Role="CTDATHANG" Type="Self.CTDATHANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Giay">
+              <PropertyRef Name="MaGiay" />
+            </Principal>
+            <Dependent Role="CTDATHANG">
+              <PropertyRef Name="MaGiay" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DonHang_Khachhang">
+          <End Role="Khachhang" Type="Self.Khachhang" Multiplicity="0..1" />
+          <End Role="DonHang" Type="Self.DonHang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Khachhang">
+              <PropertyRef Name="MaKH" />
+            </Principal>
+            <Dependent Role="DonHang">
+              <PropertyRef Name="MaKH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Giay_LoaiGiay">
+          <End Role="LoaiGiay" Type="Self.LoaiGiay" Multiplicity="0..1" />
+          <End Role="Giay" Type="Self.Giay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LoaiGiay">
+              <PropertyRef Name="MaLoai" />
+            </Principal>
+            <Dependent Role="Giay">
+              <PropertyRef Name="MaLoai" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Giay_Nhassanxuat">
+          <End Role="Nhassanxuat" Type="Self.Nhassanxuat" Multiplicity="0..1" />
+          <End Role="Giay" Type="Self.Giay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nhassanxuat">
+              <PropertyRef Name="MaNSX" />
+            </Principal>
+            <Dependent Role="Giay">
+              <PropertyRef Name="MaNSX" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rate_Giay">
+          <End Role="Giay" Type="Self.Giay" Multiplicity="0..1" />
+          <End Role="Rate" Type="Self.Rate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Giay">
+              <PropertyRef Name="MaGiay" />
+            </Principal>
+            <Dependent Role="Rate">
+              <PropertyRef Name="MaGiay" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sale_Giay">
+          <End Role="Giay" Type="Self.Giay" Multiplicity="0..1" />
+          <End Role="Sale" Type="Self.Sale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Giay">
+              <PropertyRef Name="MaGiay" />
+            </Principal>
+            <Dependent Role="Sale">
+              <PropertyRef Name="MaGiay" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SEOWEBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ADMINs" EntityType="Self.ADMIN" />
+          <EntitySet Name="comments" EntityType="Self.comment" />
+          <EntitySet Name="CTDATHANGs" EntityType="Self.CTDATHANG" />
+          <EntitySet Name="DonHangs" EntityType="Self.DonHang" />
+          <EntitySet Name="Giays" EntityType="Self.Giay" />
+          <EntitySet Name="Khachhangs" EntityType="Self.Khachhang" />
+          <EntitySet Name="LoaiGiays" EntityType="Self.LoaiGiay" />
+          <EntitySet Name="Nhassanxuats" EntityType="Self.Nhassanxuat" />
+          <EntitySet Name="Rates" EntityType="Self.Rate" />
+          <EntitySet Name="Sales" EntityType="Self.Sale" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <AssociationSet Name="FK_comment_Giay" Association="Self.FK_comment_Giay">
+            <End Role="Giay" EntitySet="Giays" />
+            <End Role="comment" EntitySet="comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_comment_Khachhang" Association="Self.FK_comment_Khachhang">
+            <End Role="Khachhang" EntitySet="Khachhangs" />
+            <End Role="comment" EntitySet="comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CTDATHANG_DonHang" Association="Self.FK_CTDATHANG_DonHang">
+            <End Role="DonHang" EntitySet="DonHangs" />
+            <End Role="CTDATHANG" EntitySet="CTDATHANGs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CTDATHANG_Giay" Association="Self.FK_CTDATHANG_Giay">
+            <End Role="Giay" EntitySet="Giays" />
+            <End Role="CTDATHANG" EntitySet="CTDATHANGs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DonHang_Khachhang" Association="Self.FK_DonHang_Khachhang">
+            <End Role="Khachhang" EntitySet="Khachhangs" />
+            <End Role="DonHang" EntitySet="DonHangs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Giay_LoaiGiay" Association="Self.FK_Giay_LoaiGiay">
+            <End Role="LoaiGiay" EntitySet="LoaiGiays" />
+            <End Role="Giay" EntitySet="Giays" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Giay_Nhassanxuat" Association="Self.FK_Giay_Nhassanxuat">
+            <End Role="Nhassanxuat" EntitySet="Nhassanxuats" />
+            <End Role="Giay" EntitySet="Giays" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rate_Giay" Association="Self.FK_Rate_Giay">
+            <End Role="Giay" EntitySet="Giays" />
+            <End Role="Rate" EntitySet="Rates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sale_Giay" Association="Self.FK_Sale_Giay">
+            <End Role="Giay" EntitySet="Giays" />
+            <End Role="Sale" EntitySet="Sales" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SEOWEBModelStoreContainer" CdmEntityContainer="SEOWEBEntities">
+          <EntitySetMapping Name="ADMINs">
+            <EntityTypeMapping TypeName="SEOWEBModel.ADMIN">
+              <MappingFragment StoreEntitySet="ADMIN">
+                <ScalarProperty Name="MaAdmin" ColumnName="MaAdmin" />
+                <ScalarProperty Name="HoTenAdmin" ColumnName="HoTenAdmin" />
+                <ScalarProperty Name="DiaChiAdmin" ColumnName="DiaChiAdmin" />
+                <ScalarProperty Name="DienThoaiAdmin" ColumnName="DienThoaiAdmin" />
+                <ScalarProperty Name="TenDNAdmin" ColumnName="TenDNAdmin" />
+                <ScalarProperty Name="MatKhauAdmin" ColumnName="MatKhauAdmin" />
+                <ScalarProperty Name="NgaySinhAdmin" ColumnName="NgaySinhAdmin" />
+                <ScalarProperty Name="GioiTinhAdmin" ColumnName="GioiTinhAdmin" />
+                <ScalarProperty Name="EmailAdmin" ColumnName="EmailAdmin" />
+                <ScalarProperty Name="QuyenAdmin" ColumnName="QuyenAdmin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="comments">
+            <EntityTypeMapping TypeName="SEOWEBModel.comment">
+              <MappingFragment StoreEntitySet="comment">
+                <ScalarProperty Name="MaComment" ColumnName="MaComment" />
+                <ScalarProperty Name="MaGiay" ColumnName="MaGiay" />
+                <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CTDATHANGs">
+            <EntityTypeMapping TypeName="SEOWEBModel.CTDATHANG">
+              <MappingFragment StoreEntitySet="CTDATHANG">
+                <ScalarProperty Name="MaHD" ColumnName="MaHD" />
+                <ScalarProperty Name="MaGiay" ColumnName="MaGiay" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+                <ScalarProperty Name="Tien" ColumnName="Tien" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DonHangs">
+            <EntityTypeMapping TypeName="SEOWEBModel.DonHang">
+              <MappingFragment StoreEntitySet="DonHang">
+                <ScalarProperty Name="MaDH" ColumnName="MaDH" />
+                <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+                <ScalarProperty Name="NgayDH" ColumnName="NgayDH" />
+                <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+                <ScalarProperty Name="NgayGiao" ColumnName="NgayGiao" />
+                <ScalarProperty Name="TenNguoiNhan" ColumnName="TenNguoiNhan" />
+                <ScalarProperty Name="DiaChiNhan" ColumnName="DiaChiNhan" />
+                <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+                <ScalarProperty Name="MaThanhToan" ColumnName="MaThanhToan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Giays">
+            <EntityTypeMapping TypeName="SEOWEBModel.Giay">
+              <MappingFragment StoreEntitySet="Giay">
+                <ScalarProperty Name="MaGiay" ColumnName="MaGiay" />
+                <ScalarProperty Name="TenGiay" ColumnName="TenGiay" />
+                <ScalarProperty Name="GiaBan" ColumnName="GiaBan" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+                <ScalarProperty Name="Hinh" ColumnName="Hinh" />
+                <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
+                <ScalarProperty Name="MaNSX" ColumnName="MaNSX" />
+                <ScalarProperty Name="NgayBan" ColumnName="NgayBan" />
+                <ScalarProperty Name="SoLuongTonKho" ColumnName="SoLuongTonKho" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="mausac" ColumnName="mausac" />
+                <ScalarProperty Name="phai" ColumnName="phai" />
+                <ScalarProperty Name="masale" ColumnName="masale" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Khachhangs">
+            <EntityTypeMapping TypeName="SEOWEBModel.Khachhang">
+              <MappingFragment StoreEntitySet="Khachhang">
+                <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+                <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
+                <ScalarProperty Name="TenDN" ColumnName="TenDN" />
+                <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="sumbuy" ColumnName="sumbuy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoaiGiays">
+            <EntityTypeMapping TypeName="SEOWEBModel.LoaiGiay">
+              <MappingFragment StoreEntitySet="LoaiGiay">
+                <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
+                <ScalarProperty Name="TenLoaiGiay" ColumnName="TenLoaiGiay" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nhassanxuats">
+            <EntityTypeMapping TypeName="SEOWEBModel.Nhassanxuat">
+              <MappingFragment StoreEntitySet="Nhassanxuat">
+                <ScalarProperty Name="MaNSX" ColumnName="MaNSX" />
+                <ScalarProperty Name="TenNSX" ColumnName="TenNSX" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rates">
+            <EntityTypeMapping TypeName="SEOWEBModel.Rate">
+              <MappingFragment StoreEntitySet="Rate">
+                <ScalarProperty Name="Marate" ColumnName="Marate" />
+                <ScalarProperty Name="MaGiay" ColumnName="MaGiay" />
+                <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+                <ScalarProperty Name="Sao" ColumnName="Sao" />
+                <ScalarProperty Name="Noidung" ColumnName="Noidung" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sales">
+            <EntityTypeMapping TypeName="SEOWEBModel.Sale">
+              <MappingFragment StoreEntitySet="Sale">
+                <ScalarProperty Name="MaSale" ColumnName="MaSale" />
+                <ScalarProperty Name="MaGiay" ColumnName="MaGiay" />
+                <ScalarProperty Name="SalePhanTram" ColumnName="SalePhanTram" />
+                <ScalarProperty Name="SaleTien" ColumnName="SaleTien" />
+                <ScalarProperty Name="ngaybatdau" ColumnName="ngaybatdau" />
+                <ScalarProperty Name="NgayHetSale" ColumnName="NgayHetSale" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="SEOWEBModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

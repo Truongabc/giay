@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Meo Shoes</title>
+    <link rel="icon" href="~/images/Capture.ico" type="image/x-icon" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/search.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="ajax_loader" class="ajax-load-qa"> </div>
+    <div class="navbar navbar-inverse navbar-fixed-top" style="opacity:0.96;">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="@Url.Action("Index", "Home")" class="img-center">
+                    <img src="~/images/Capture1.png" class="img-center" height="50" width="50" />
+                </a>
+                <div class="giohang_custom">
+                    <a href="@Url.Action("Index", "Home")"> <img src="~/images/giohang.png" alt="gio hang" /></a>
+                </div>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+
+                    <li>@Html.ActionLink("Trang Chủ", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>
+                        <div style="margin-top:4px;">
+                        <form>
+                            <input type="navsearch" name="search" placeholder="Search..">
+                        </form>
+                    </div>
+                            </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li>@Html.ActionLink("Mèo", "meo", "Home")</li>
+                    <li>@Html.ActionLink("Đăng Nhập", "login", "Home")</li>
+                    <li><a href="@Url.Action("Index", "Home")" style="padding-top:1px;padding-bottom:4px;"> <img src="~/images/giohang.png" alt="gio hang" /></a></li>
+
+
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+
+    </div>
+    <footer class="page-footer font-small unique-color-dark" style="background-color: #f2f2f2	">
+        <div style="background-color: #6351ce;">
+            <div class="container">
+            </div>
+        </div>
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left mt-5">
+            <!-- Grid row -->
+            <div class="row mt-3">
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <!-- Content -->
+                    <h2 class=" font-weight-bold" style="font-size:medium;">Meo Shoes</h2>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11078.295526807186!2d106.67009382402068!3d10.980805026488351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d13b06920ebb%3A0x1d601afc81e1a2e!2zTmd1eeG7hW4gVOG6pW4gVHLGsOG7nW5n!5e0!3m2!1svi!2s!4v1565151588609!5m2!1svi!2s" width="100%" height="20%" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+                <!-- Grid column -->
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h3 class="font-weight-bold" style="font-size:medium;">Tựu Sách hay</h3>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <a href="/SachCD.aspx?MaCD=1">Ngoại Ngữ</a>
+                    </p>
+                    <p>
+                        <a href="/SachCD.aspx?MaCD=2">Công Nghệ Thông Tin</a>
+                    </p>
+                    <p>
+                        <a href="~/SachCD.aspx?MaCD=9">Kinh tế</a>
+                    </p>
+                    <p>
+                        <a href="/SachCD.aspx?MaCD=11">Nghệ Thuật Sống</a>
+                    </p>
+                </div>
+                <!-- Grid column -->
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h3 class="e font-weight-bold" style="font-size:medium;">Thông Tin</h3>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <a href="#!">Đăng Nhập</a>
+                    </p>
+                    <p>
+                        <a href="#!">Đăng Kí</a>
+                    </p>
+                    <p>
+                        <a href="/ChiTiet.aspx">Đơn Hàng</a>
+                    </p>
+                    <p>
+                        <a href="#!">Trợ Giúp</a>
+                    </p>
+                </div>
+                <!-- Grid column -->
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <!-- Links -->
+                    <h3 class=" font-weight-bold" style="font-size:medium;">Liên Hệ</h3>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <i class="fas fa-home mr-3"></i>Nhà Sách Bình Minh
+                    </p>
+                    <p>
+                        <i class="fas fa-envelope mr-3"></i> nhasachbinhminh.bd@gmail.com
+                    </p>
+                    <p>
+                        <i class="fas fa-phone mr-3"></i> 0274 3859 715
+                    </p>
+                    <p>
+                        <i class="fas fa-print mr-3"></i> 0123 456 789
+                    </p>
+                </div>
+                <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+        </div>
+        <!-- Footer Links -->
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">
+            <div style="width:80%;margin-left:auto;margin-right:auto;display:block;border-top:1px solid #b4adad; padding-top:20px;padding-bottom:20px;font-size:medium;">
+                <strong><p>&copy; @DateTime.Now.Year - Meo Shoes</p></strong>
+            </div>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

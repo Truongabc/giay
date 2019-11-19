@@ -1,0 +1,100 @@
+﻿@model IEnumerable<GoBrandingSEO.Models.Giay>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TenGiay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GiaBan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MoTa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hinh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayBan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuongTonKho)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Size)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mausac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.phai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.masale)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LoaiGiay.TenLoaiGiay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nhassanxuat.TenNSX)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenGiay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GiaBan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MoTa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayBan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuongTonKho)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Size)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mausac)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.phai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.masale)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoaiGiay.TenLoaiGiay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nhassanxuat.TenNSX)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaGiay }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaGiay }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaGiay })
+        </td>
+    </tr>
+}
+
+</table>

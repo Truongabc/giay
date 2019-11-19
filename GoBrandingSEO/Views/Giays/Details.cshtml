@@ -1,0 +1,115 @@
+﻿@model GoBrandingSEO.Models.Giay
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Giay</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenGiay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenGiay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GiaBan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GiaBan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MoTa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoTa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayBan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayBan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLuongTonKho)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuongTonKho)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Size)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Size)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mausac)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mausac)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.phai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.masale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.masale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LoaiGiay.TenLoaiGiay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoaiGiay.TenLoaiGiay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nhassanxuat.TenNSX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nhassanxuat.TenNSX)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaGiay }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
