@@ -1,31 +1,34 @@
 ﻿@{
     ViewBag.Title = "Meo Shoes";
 }
-
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
-
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
+<link href="~/Content/farm.css" rel="stylesheet" />
+<div class="col-md-12" style="background:#151515;margin-top:-20px;">
+    <div id="menudf">
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 90%;po">
+        <ul>
+            <li><a href="#meo_shoes">Meo Shoes </a></li>
+            <li><a href="#new_shoes">New Shoes </a></li>
+            <li><a href="#nam_sales">Nam Sales </a></li>
+            <li><a href="#nu_sales">Nữ Sales </a></li>
+        </ul>
+    </div>
+    
+    <div id="chu" style="position:absolute;">
+        <h1>Meo Shoes</h1>
+        <br />
+        <h2> Cửa hàng chuyên về Giày</h2>
+        <br />
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            Trẻ Trung, Năng Động, Sáng Tạo.
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <br />
+
+        @Html.ActionLink("Shop Now >", "Product")
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    <div  id="meo_shoes">
+        <img src="~/images/default.PNG" style="width:95%;height:0%;float:right;" />
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    <div>
+
     </div>
 </div>

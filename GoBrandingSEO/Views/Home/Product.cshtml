@@ -1,0 +1,56 @@
+﻿@model IEnumerable<GoBrandingSEO.Models.Giay>
+
+@{
+    ViewBag.Title = "Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
+<script src="~/Scripts/prosc.js"></script>
+<link href="~/Content/prost.css" rel="stylesheet" />
+<h2>|</h2>
+<div style="margin-left:15%">
+    <div class="container" style="width:90%">
+        <div class="well well-sm col-lg-12"  style="color:rgba(12, 12, 12, 0.96)">
+            <strong style="float:left">Display </strong>
+            <div class="btn-group" style="float:left">
+                <a href="#" id="list" style="padding:10px 10px;color:rgba(33, 32, 32, 0.77);text-decoration-line: none;"><span class="glyphicon glyphicon-th-list"></span>List</a> 
+                <a href="#" id="grid" style="padding:0px;color:rgba(33, 32, 32, 0.77);text-decoration-line: none;"><span class="glyphicon glyphicon-th"></span>grid</a>
+            </div>
+        </div>
+
+        <div id="products" class="row list-group" style="margin-top:5%">
+            @foreach (var item in Model)
+            {
+                <div class="item  col-xs-3 col-lg-3">
+                    <div class="thumbnail">
+                        <img class="group list-group-image" src="~/images/shoes/@Html.DisplayFor(modelItem => item.Hinh)" alt="" width="200" height="100"/>
+                        <div class="caption">
+                            <h4 class="group inner list-group-item-heading">
+
+                                @Html.DisplayFor(modelItem => item.TenGiay)
+                            </h4>
+                            <p class="group inner list-group-item-text">
+                                @Html.DisplayFor(modelItem => item.mausac)
+                            </p>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6">
+                                    <p class="lead">
+                                        @String.Format("{0:0,0}", item.GiaBan)đ
+                                    </p>
+                                </div>
+                                <div class="col-xs-12 col-md-6">
+                                    <a class="btn btn-success" href="#">Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+</div>

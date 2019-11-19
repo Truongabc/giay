@@ -1,0 +1,82 @@
+﻿@model IEnumerable<GoBrandingSEO.Models.ADMIN>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.HoTenAdmin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiaChiAdmin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DienThoaiAdmin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenDNAdmin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MatKhauAdmin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgaySinhAdmin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GioiTinhAdmin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailAdmin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuyenAdmin)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.HoTenAdmin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiaChiAdmin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DienThoaiAdmin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenDNAdmin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MatKhauAdmin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgaySinhAdmin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GioiTinhAdmin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailAdmin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuyenAdmin)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaAdmin }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaAdmin }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaAdmin })
+        </td>
+    </tr>
+}
+
+</table>

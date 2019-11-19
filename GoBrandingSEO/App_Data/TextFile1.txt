@@ -1,0 +1,161 @@
+﻿@model IEnumerable<GoBrandingSEO.Models.MenuBar>
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Meo Shoes</title>
+    <link rel="icon" href="~/images/Capture.ico" type="image/x-icon" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/search.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" style="opacity:0.96;">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="@Url.Action("Index", "Home")" class="img-center">
+                    <img src="~/images/Capture1.png" class="img-center" height="50" width="50" />
+                </a>
+                <div class="giohang_custom">
+                    <a href="@Url.Action("Index", "Home")"> <img src="~/images/giohang.png" alt="gio hang" /></a>
+                </div>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <div style="margin-top:6px;" class="search_customhiden">
+                            <form>
+                                <input type="navsearch" name="search" placeholder="Search..">
+                            </form>
+                        </div>
+                    </li>
+                    @foreach (var item in Model)
+                    {
+                    <li>@Html.ActionLink(item.NameMenu,item.Link, "Home")</li>
+                    }
+                    <li>
+                        @using (Html.BeginForm("IndexSearch", "Home", FormMethod.Get, new { @class = "navbar-form navbar-right", role = "search", id = "search-form" }))
+                        {
+                            <div class="form-group search_custom">
+                                <input type="navsearch" class="form-control " placeholder="Tìm kiếm giày..." name="SearchTerm" value="@ViewBag.SearchTerm" id="search-box">
+                            </div>
+                        }
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>@Html.ActionLink("Đăng Nhập", "login", "Home")</li>
+                    <li><div class="giohangngang"><a href="@Url.Action("Index", "Home")"> <img src="~/images/giohang.png" alt="gio hang" /></a></div></li>
+
+
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <div>
+        @RenderBody()
+        <hr />
+
+    </div>
+    <footer class="page-footer font-small unique-color-dark" style="background-color: #f2f2f2	">
+
+        <div style="background-color: #6351ce;">
+
+            <div class="container">
+            </div>
+        </div>
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left mt-5">
+            <!-- Grid row -->
+            <div class="row mt-3">
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <!-- Content -->
+                    <h2 class=" font-weight-bold" style="font-size:medium;">Meo Shoes</h2>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p><strong>Meo Shoes hy vọng sẽ đem lại cho bạn những giá trị xúc cảm mạnh mẽ nhất</strong></p>
+                </div>
+                <!-- Grid column -->
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h3 class="font-weight-bold" style="font-size:medium;">Giày bán chạy</h3>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <a href="#">Giày Nam 02</a>
+                    </p>
+                    <p>
+                        <a href="#">Giày Cao gót nữ 04</a>
+                    </p>
+                    <p>
+                        <a href="#">Scandal mới</a>
+                    </p>
+                    <p>
+                        <a href="#">Thể Thao Nam</a>
+                    </p>
+                </div>
+                <!-- Grid column -->
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h3 class="e font-weight-bold" style="font-size:medium;">Thông Tin</h3>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <a href="#">Đăng Nhập</a>
+                    </p>
+                    <p>
+                        <a href="#">Đăng Kí</a>
+                    </p>
+                    <p>
+                        <a href="#">Đơn Hàng</a>
+                    </p>
+                    <p>
+                        <a href="#">Trợ Giúp</a>
+                    </p>
+                </div>
+                <!-- Grid column -->
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <!-- Links -->
+                    <h3 class=" font-weight-bold" style="font-size:medium;">Liên Hệ</h3>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <i class="fas fa-home mr-3"></i>MEO Shoes
+                    </p>
+                    <p>
+                        <i class="fas fa-envelope mr-3"></i> truong.ntt1998@gmail.com
+                    </p>
+                    <p>
+                        <i class="fas fa-phone mr-3"></i> 0976 349 172
+                    </p>
+                    <p>
+                        <i class="fas fa-print mr-3"></i> 0123 456 789
+                    </p>
+                </div>
+                <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+        </div>
+        <!-- Footer Links -->
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">
+            <div style="width:80%;margin-left:auto;margin-right:auto;display:block;border-top:1px solid #b4adad; padding-top:10px;padding-bottom:10px;font-size:medium;">
+                <strong><p>&copy; @DateTime.Now.Year - Meo Shoes</p></strong>
+            </div>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

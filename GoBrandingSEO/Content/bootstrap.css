@@ -7371,10 +7371,26 @@ tbody.collapse.in {
     margin-right:4%;
     float:right;
 }
-
+.giohangngang {
+    padding-top: 1px;
+    padding-bottom: 4px;
+    display:block;
+}
+.search_customhiden{
+    display:none;
+}
 @media (max-width: 768px) {
     .giohang_custom {
         display: block;
+    }
+    .giohangngang{
+        display:none;
+    }
+    .search_custom {
+        display: none;
+    }
+    .search_customhiden {
+        display:block;
     }
 }
     /*# sourceMappingURL=bootstrap.css.map */
