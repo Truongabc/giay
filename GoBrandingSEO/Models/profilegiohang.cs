@@ -12,15 +12,15 @@ namespace GoBrandingSEO.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Rate
+    public partial class profilegiohang
     {
+        public int MaSave { get; set; }
         public int MaGiay { get; set; }
-        public int MaKH { get; set; }
-        public Nullable<int> Sao { get; set; }
-        public string Noidung { get; set; }
-        public Nullable<System.DateTime> NgayDanhgia { get; set; }
+        public Nullable<int> SoLuong { get; set; }
+        public Nullable<int> ngaycapnhat { get; set; }
+        public int size { get; set; }
     
-        public virtual Giay Giay { get; set; }
-        public virtual Khachhang Khachhang { get; set; }
+        public virtual SaveGioHang SaveGioHang { get; set; }
+        public virtual Size Size1 { get; set; }
     }
 }

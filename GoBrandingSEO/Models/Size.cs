@@ -12,22 +12,22 @@ namespace GoBrandingSEO.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Sale
+    public partial class Size
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Sale()
+        public Size()
         {
-            this.Giays = new HashSet<Giay>();
+            this.profilegiohangs = new HashSet<profilegiohang>();
         }
     
-        public int MaSale { get; set; }
-        public Nullable<int> MaGiay { get; set; }
-        public Nullable<double> SalePhanTram { get; set; }
-        public Nullable<decimal> SaleTien { get; set; }
-        public Nullable<System.DateTime> ngaybatdau { get; set; }
-        public Nullable<System.DateTime> NgayHetSale { get; set; }
+        public int Masize { get; set; }
+        public int MaGiay { get; set; }
+        public Nullable<decimal> GiaBan { get; set; }
+        public Nullable<int> TonKho { get; set; }
+        public Nullable<System.DateTime> NgayCapNhat { get; set; }
     
+        public virtual Giay Giay { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Giay> Giays { get; set; }
+        public virtual ICollection<profilegiohang> profilegiohangs { get; set; }
     }
 }

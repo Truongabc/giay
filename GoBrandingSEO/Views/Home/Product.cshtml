@@ -1,9 +1,11 @@
-﻿@model IEnumerable<GoBrandingSEO.Models.Giay>
+﻿@model IPagedList<GoBrandingSEO.Models.Giay>
 
 @{
     ViewBag.Title = "Product";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@using PagedList;
+@using PagedList.Mvc;
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
@@ -14,10 +16,10 @@
 <h2>|</h2>
 <div style="margin-left:15%">
     <div class="container" style="width:90%">
-        <div class="well well-sm col-lg-12"  style="color:rgba(12, 12, 12, 0.96)">
+        <div class="well well-sm col-lg-12" style="color:rgba(12, 12, 12, 0.96)">
             <strong style="float:left">Display </strong>
             <div class="btn-group" style="float:left">
-                <a href="#" id="list" style="padding:10px 10px;color:rgba(33, 32, 32, 0.77);text-decoration-line: none;"><span class="glyphicon glyphicon-th-list"></span>List</a> 
+                <a href="#" id="list" style="padding:10px 10px;color:rgba(33, 32, 32, 0.77);text-decoration-line: none;"><span class="glyphicon glyphicon-th-list"></span>List</a>
                 <a href="#" id="grid" style="padding:0px;color:rgba(33, 32, 32, 0.77);text-decoration-line: none;"><span class="glyphicon glyphicon-th"></span>grid</a>
             </div>
         </div>
@@ -27,7 +29,7 @@
             {
                 <div class="item  col-xs-3 col-lg-3">
                     <div class="thumbnail">
-                        <img class="group list-group-image" src="~/images/shoes/@Html.DisplayFor(modelItem => item.Hinh)" alt="" width="200" height="100"/>
+                        <img class="group list-group-image" src="~/images/shoes/@Html.DisplayFor(modelItem => item.Hinh)" alt="" width="200" height="100" />
                         <div class="caption">
                             <h4 class="group inner list-group-item-heading">
 
@@ -50,7 +52,9 @@
                     </div>
                 </div>
             }
-        </div>
+            <hr />
 
+        </div>
+        @Html.PagedListPager(Model, Page => Url.Action("Product", new { Page }))
     </div>
 </div>

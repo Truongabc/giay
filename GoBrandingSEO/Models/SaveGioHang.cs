@@ -12,22 +12,19 @@ namespace GoBrandingSEO.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Sale
+    public partial class SaveGioHang
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Sale()
+        public SaveGioHang()
         {
-            this.Giays = new HashSet<Giay>();
+            this.profilegiohangs = new HashSet<profilegiohang>();
         }
     
-        public int MaSale { get; set; }
-        public Nullable<int> MaGiay { get; set; }
-        public Nullable<double> SalePhanTram { get; set; }
-        public Nullable<decimal> SaleTien { get; set; }
-        public Nullable<System.DateTime> ngaybatdau { get; set; }
-        public Nullable<System.DateTime> NgayHetSale { get; set; }
+        public int masave { get; set; }
+        public Nullable<int> maKH { get; set; }
     
+        public virtual Khachhang Khachhang { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Giay> Giays { get; set; }
+        public virtual ICollection<profilegiohang> profilegiohangs { get; set; }
     }
 }

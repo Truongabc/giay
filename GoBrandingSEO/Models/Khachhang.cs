@@ -19,6 +19,8 @@ namespace GoBrandingSEO.Models
         {
             this.comments = new HashSet<comment>();
             this.DonHangs = new HashSet<DonHang>();
+            this.Rates = new HashSet<Rate>();
+            this.SaveGioHangs = new HashSet<SaveGioHang>();
         }
     
         public int MaKH { get; set; }
@@ -36,5 +38,9 @@ namespace GoBrandingSEO.Models
         public virtual ICollection<comment> comments { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DonHang> DonHangs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Rate> Rates { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SaveGioHang> SaveGioHangs { get; set; }
     }
 }

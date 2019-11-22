@@ -1,9 +1,6 @@
 ﻿@model IPagedList<GoBrandingSEO.Models.Giay>
-
 @{
-    /**/
-
-    ViewBag.Title = "IndexSearch";
+    ViewBag.Title = "Giày Nữ";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @using PagedList;
@@ -15,7 +12,7 @@
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
 <script src="~/Scripts/prosc.js"></script>
 <link href="~/Content/prost.css" rel="stylesheet" />
-<h2>Tìm Kiêm</h2>
+<h2>Giày Nữ</h2>
 <div style="margin-left:15%">
     <div class="container" style="width:90%">
         <div class="well well-sm col-lg-12" style="color:rgba(12, 12, 12, 0.96)">
@@ -34,6 +31,7 @@
                         <img class="group list-group-image" src="~/images/shoes/@Html.DisplayFor(modelItem => item.Hinh)" alt="" width="200" height="100" />
                         <div class="caption">
                             <h4 class="group inner list-group-item-heading">
+
                                 @Html.DisplayFor(modelItem => item.TenGiay)
                             </h4>
                             <p class="group inner list-group-item-text">
@@ -54,18 +52,8 @@
                 </div>
             }
         </div>
-        @Html.PagedListPager(Model, Page => Url.Action("IndexSearch", "Home", new {Page, Search=Request.QueryString["search-form"]}))
+        @Html.PagedListPager(Model, Page => Url.Action("GiayNam", new { Page }))
     </div>
 </div>
 
-@section Scripts
-{
-    <script>
-        function empty() {
-            var x = $('#search-form').val();
-            if (x == "" || x == null) {
-                return false;
-            }
-        }
-    </script>
-}
+

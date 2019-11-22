@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
+using PagedList.Mvc;
 
 namespace GoBrandingSEO.Controllers
 {
@@ -18,9 +20,23 @@ namespace GoBrandingSEO.Controllers
         {
             return View();
         }
-        public ActionResult GiayNam()
+        public ActionResult GiayNam(int? page)
         {
-            return View(db.Giays.SingleOrDefault());
+            if (page == null) page = 1;
+            var links = (from l in db.Giays
+                         select l).OrderBy(x => x.MaGiay);
+            int pageSize = 8;
+            int pageNumber = (page ?? 1);
+            return View(links.Where(n => n.phai == "Nam" || n.phai == "Cahai").ToPagedList(pageNumber, pageSize));
+        }
+        public ActionResult GiayNu(int? page)
+        {
+            if (page == null) page = 1;
+            var links = (from l in db.Giays
+                         select l).OrderBy(x => x.MaGiay);
+            int pageSize = 8;
+            int pageNumber = (page ?? 1);
+            return View(links.Where(n => n.phai == "Nu" || n.phai == "Cahai").ToPagedList(pageNumber, pageSize));
         }
 
         public ActionResult About()
@@ -36,11 +52,15 @@ namespace GoBrandingSEO.Controllers
 
             return View();
         }
-        public ActionResult Product()
+        public ActionResult Product(int? page)
         {
-            ViewBag.Message = "you are.";
 
-            return View(db.Giays.ToList());
+            if (page == null) page = 1;
+            var links = (from l in db.Giays
+                         select l).OrderBy(x => x.MaGiay);        
+            int pageSize = 8;
+            int pageNumber = (page ?? 1);
+            return View(links.ToPagedList(pageNumber, pageSize));
         }
         public ActionResult LienHe()
         {
@@ -54,17 +74,32 @@ namespace GoBrandingSEO.Controllers
 
             return View();
         }
-        public ActionResult IndexSearch(string searchTerm)
+        public ActionResult TinTuc()
+        {
+            ViewBag.Message = "Your Login page.";
+            return View();
+        }
+        public ActionResult GioHang()
+        {
+            ViewBag.Message = "Your Login page.";
+            return View();
+        }
+        public ActionResult IndexSearch(string searchTerm, int? page)
         {
 
-            var books = from b in db.Giays select b;
+            if (page == null) page = 1;
+            var links = (from l in db.Giays
+                         select l).OrderBy(x => x.MaGiay);
+            int pageSize = 8;
+            int pageNumber = (page ?? 1);
+            var Shoes = from b in db.Giays select b;
 
             if (!String.IsNullOrEmpty(searchTerm))
             {
-                books = db.Giays.Where(b => b.TenGiay.Contains(searchTerm));
+                Shoes = db.Giays.Where(b => b.TenGiay.Contains(searchTerm));
             }
             ViewBag.SearchTerm = searchTerm;
-            return View(books.ToList());
+            return View(Shoes.ToList().ToPagedList(pageNumber, pageSize));
         }
     }
 }

@@ -20,7 +20,7 @@ namespace GoBrandingSEO.Models
             this.comments = new HashSet<comment>();
             this.CTDATHANGs = new HashSet<CTDATHANG>();
             this.Rates = new HashSet<Rate>();
-            this.Sales = new HashSet<Sale>();
+            this.Sizes = new HashSet<Size>();
         }
     
         public int MaGiay { get; set; }
@@ -31,7 +31,6 @@ namespace GoBrandingSEO.Models
         public Nullable<int> MaLoai { get; set; }
         public Nullable<int> MaNSX { get; set; }
         public Nullable<System.DateTime> NgayBan { get; set; }
-        public Nullable<int> SoLuongTonKho { get; set; }
         public Nullable<int> Size { get; set; }
         public string mausac { get; set; }
         public string phai { get; set; }
@@ -43,9 +42,10 @@ namespace GoBrandingSEO.Models
         public virtual ICollection<CTDATHANG> CTDATHANGs { get; set; }
         public virtual LoaiGiay LoaiGiay { get; set; }
         public virtual Nhassanxuat Nhassanxuat { get; set; }
+        public virtual Sale Sale { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Rate> Rates { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Sale> Sales { get; set; }
+        public virtual ICollection<Size> Sizes { get; set; }
     }
 }

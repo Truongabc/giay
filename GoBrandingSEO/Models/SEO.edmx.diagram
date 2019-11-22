@@ -4,19 +4,21 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9532b1b31ea048eba0495dc0798ab85c" Name="Diagram1" ZoomLevel="55">
-        <EntityTypeShape EntityType="SEOWEBModel.ADMIN" Width="1.5" PointX="7.75" PointY="3.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SEOWEBModel.comment" Width="1.5" PointX="5.25" PointY="8.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SEOWEBModel.Contact" Width="1.5" PointX="7.75" PointY="7.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SEOWEBModel.CTDATHANG" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SEOWEBModel.DonHang" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SEOWEBModel.Giay" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SEOWEBModel.Khachhang" Width="1.5" PointX="0.75" PointY="11.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SEOWEBModel.LoaiGiay" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SEOWEBModel.Nhassanxuat" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SEOWEBModel.Rate" Width="1.5" PointX="5.25" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SEOWEBModel.Sale" Width="1.5" PointX="5.25" PointY="15.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SEOWEBModel.sysdiagram" Width="1.5" PointX="7.75" PointY="10.125" IsExpanded="true" />
+      <Diagram DiagramId="347807fbf9984800a08254b28f6dc617" Name="Diagram1">
+        <EntityTypeShape EntityType="SEOWEBModel.ADMIN" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SEOWEBModel.comment" Width="1.5" PointX="5.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="SEOWEBModel.Contact" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SEOWEBModel.CTDATHANG" Width="1.5" PointX="5.25" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SEOWEBModel.DonHang" Width="1.5" PointX="3" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SEOWEBModel.Giay" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SEOWEBModel.Khachhang" Width="1.5" PointX="0.75" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SEOWEBModel.LoaiGiay" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SEOWEBModel.MenuBar" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SEOWEBModel.Nhassanxuat" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SEOWEBModel.Rate" Width="1.5" PointX="5.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SEOWEBModel.Sale" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SEOWEBModel.Size" Width="1.5" PointX="5.25" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SEOWEBModel.sysdiagram" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="SEOWEBModel.FK_comment_Giay" ManuallyRouted="false" />
         <AssociationConnector Association="SEOWEBModel.FK_comment_Khachhang" ManuallyRouted="false" />
         <AssociationConnector Association="SEOWEBModel.FK_CTDATHANG_DonHang" ManuallyRouted="false" />
@@ -24,9 +26,15 @@
         <AssociationConnector Association="SEOWEBModel.FK_DonHang_Khachhang" ManuallyRouted="false" />
         <AssociationConnector Association="SEOWEBModel.FK_Giay_LoaiGiay" ManuallyRouted="false" />
         <AssociationConnector Association="SEOWEBModel.FK_Giay_Nhassanxuat" ManuallyRouted="false" />
-        <AssociationConnector Association="SEOWEBModel.FK_Rate_Giay" ManuallyRouted="false" />
-        <AssociationConnector Association="SEOWEBModel.FK_Sale_Giay" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="SEOWEBModel.MenuBar" Width="1.5" PointX="6.875" PointY="1" />
+        <AssociationConnector Association="SEOWEBModel.FK_Giay_Sale" ManuallyRouted="false" />
+        <AssociationConnector Association="SEOWEBModel.FK_Rate_Giay1" ManuallyRouted="false" />
+        <AssociationConnector Association="SEOWEBModel.FK_Size_Giay" ManuallyRouted="false" />
+        <AssociationConnector Association="SEOWEBModel.FK_Rate_Khachhang" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SEOWEBModel.profilegiohang" Width="1.5" PointX="7.5" PointY="16.375" />
+        <EntityTypeShape EntityType="SEOWEBModel.SaveGioHang" Width="1.5" PointX="3" PointY="18.25" />
+        <AssociationConnector Association="SEOWEBModel.FK_SaveGioHang_Khachhang" />
+        <AssociationConnector Association="SEOWEBModel.FK_profilegiohang_SaveGioHang" />
+        <AssociationConnector Association="SEOWEBModel.FK_profilegiohang_Size" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

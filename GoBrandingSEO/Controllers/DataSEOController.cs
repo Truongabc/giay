@@ -31,7 +31,7 @@ namespace GoBrandingSEO.Controllers
                     if (obj != null)
                     {
                         Session["UserID"] = obj.MaKH.ToString();
-                        Session["UserName"] = obj.TenDN.ToString();
+                        Session["UserName"] = obj.HoTen.ToString();
                         return RedirectToAction("UserDashBoard");
                     }
                 }

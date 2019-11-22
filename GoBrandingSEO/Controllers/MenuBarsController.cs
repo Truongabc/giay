@@ -18,6 +18,6 @@ namespace GoBrandingSEO.Controllers
         public ActionResult Menu()
         {
             return View(db.MenuBars.ToList());
-        }      
+        }
     }
 }

@@ -33,10 +33,13 @@ namespace GoBrandingSEO.Models
         public virtual DbSet<Giay> Giays { get; set; }
         public virtual DbSet<Khachhang> Khachhangs { get; set; }
         public virtual DbSet<LoaiGiay> LoaiGiays { get; set; }
+        public virtual DbSet<MenuBar> MenuBars { get; set; }
         public virtual DbSet<Nhassanxuat> Nhassanxuats { get; set; }
         public virtual DbSet<Rate> Rates { get; set; }
         public virtual DbSet<Sale> Sales { get; set; }
+        public virtual DbSet<Size> Sizes { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<MenuBar> MenuBars { get; set; }
+        public virtual DbSet<profilegiohang> profilegiohangs { get; set; }
+        public virtual DbSet<SaveGioHang> SaveGioHangs { get; set; }
     }
 }

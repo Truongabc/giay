@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+
     <div class="navbar navbar-inverse navbar-fixed-top" style="opacity:0.96;">
         <div class="container">
             <div class="navbar-header">
@@ -29,6 +30,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+                    @Html.Action("Menu", "MenuBars")
                     <li>
                         <div style="margin-top:6px;" class="search_customhiden">
                             <form>
@@ -47,8 +49,18 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li>@Html.ActionLink("Đăng Nhập", "login", "Home")</li>
-                    <li><div class="giohangngang"><a href="@Url.Action("Index", "Home")"> <img src="~/images/giohang.png" alt="gio hang" /></a></div></li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <ul class="nav navbar-nav">
+                            <li><a href="#" style="color:#ffffff"> @User.Identity.Name</a></li>
+                            <li><a href="@Url.Action("SignOut", "Account")" style="color:#ffffff">Sign Out</a></li>
+                        </ul>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Đăng Nhập", "Index", "Account")</li>
+                    }
+                        <li><div class="giohangngang"><a href="@Url.Action("GioHang", "Home")"> <img src="~/images/giohang.png" alt="gio hang" /></a></div></li>
 
 
                 </ul>

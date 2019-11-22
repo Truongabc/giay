@@ -2,12 +2,14 @@
 
 @{
     ViewBag.Title = "Menu";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = null;
 }
 
-    @foreach (var item in Model)
-    {
+@foreach (var item in Model)
+{
     <li>
-        <a href="~/Views/Home/">@item.NameMenu</a>
+    
+        @Html.ActionLink(item.NameMenu, item.Link, "Home")
+    
     </li>
-    }
+}

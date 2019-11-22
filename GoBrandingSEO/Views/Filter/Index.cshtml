@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+@for (int x = 0; x < Model.Count(); x++)
+{
+    <div class="filter-cat" data-target="#list-@x">@Model.ElementAt(x).getName() <i class="fa fa-angle-down"></i></div>
+    <ul id="list-@x">
+        @for (int y = 0; y < Model.ElementAt(x).getFilterList().Count; y++)
+        {
+            <li>
+                <input type="checkbox" id="@Model.ElementAt(x).getFilterList().ElementAt(y).getDescription()" name="@Model.ElementAt(x).getFilterList().ElementAt(y).getDescription()" />
+                <label for="@Model.ElementAt(x).getFilterList().ElementAt(y).getDescription()">@Model.ElementAt(x).getFilterList().ElementAt(y).getDescription()</label>
+            </li>
+        }
+    </ul>
+}
+
